@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Init : MonoBehaviour {
 
-	// CONSTANTES
+	// Valores por defecto
 	public static int CANT_CALLES = 100;
 	public static int CANT_AVENIDAS = 100;
 	public static float ELEVACION_CIUDAD = -0.01f;
