@@ -4,8 +4,8 @@ using System.Collections;
 public class Init : MonoBehaviour {
 
 	// Valores por defecto
-	public static int CANT_CALLES = 100;
-	public static int CANT_AVENIDAS = 100;
+	public int CANT_CALLES = 100;
+	public int CANT_AVENIDAS = 100;
 	public static float ELEVACION_CIUDAD = -0.01f;
 	public static float ELEVACION_CALLEAV = 0.01f;
 	public static float ANCHO_CALLEAV = 0.25f;
