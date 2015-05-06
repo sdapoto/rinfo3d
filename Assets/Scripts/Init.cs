@@ -10,12 +10,14 @@ public class Init : MonoBehaviour {
 	public static float ELEVACION_CALLEAV = 0.01f;
 	public static float ANCHO_CALLEAV = 0.25f;
 	public static float DESP_CALLEAV = ANCHO_CALLEAV * 2;
+	public static float ELEVACION_PAPEL = 0.015f;
 
 	// Prefab ciudad, calles y avenidas para inicializar ciudad
 	public Transform ciudadPrefab;
 	public Transform callePrefab; 
 	public Transform avenidaPrefab; 
 	public Transform robotPrefab; 
+	public Transform papelPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +39,16 @@ public class Init : MonoBehaviour {
 		for (int x = 1; x <= CANT_AVENIDAS; x++) {
 			Object avenidaInstance = Instantiate(avenidaPrefab, new Vector3((float)x, ELEVACION_CALLEAV, CANT_CALLES/2 + DESP_CALLEAV), Quaternion.identity);
 			((Transform)avenidaInstance).localScale = new Vector3 (ANCHO_CALLEAV, ELEVACION_CALLEAV, CANT_CALLES - 1);
+		}
+
+		// Inicializar papeles de manera aleatoria
+		for (int z = 1; z < CANT_CALLES; z++) {
+			for (int x = 1; x < CANT_AVENIDAS; x++) {
+				int count = Random.Range(0, 2);
+				for (int c = 0; c < count; c++) {
+					Instantiate(papelPrefab, new Vector3(x, ELEVACION_PAPEL, z), Quaternion.identity);
+				}
+			}
 		}
 
 		// Inicializar robot
